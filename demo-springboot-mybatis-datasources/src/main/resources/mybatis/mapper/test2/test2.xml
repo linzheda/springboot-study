@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yc.mapper.test2.Test2Mapper" >
+    <resultMap id="BaseResultMap" type="com.yc.entity.Student" >
+        <id column="id" property="id"  />
+        <result column="name" property="name"  />
+        <result column="remark" property="remark"  />
+        <result column="sex" property="sex" />
+        <result column="age" property="age"/>
+    </resultMap>
+    
+    <sql id="Base_Column_List" >
+        id, name, sex, remark, age
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+       SELECT 
+       <include refid="Base_Column_List" />
+	   FROM study
+    </select>
+
+   
+
+</mapper>
